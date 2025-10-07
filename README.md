@@ -6,7 +6,7 @@ This page is a personal design practice. It includes four main sections focused 
 
 ## Inspiration
 
-I drew inspiration from editorial styles and modern UI components. The goal was to explore visual modularity and experiment with animated entrances.
+I drew inspiration from editorial styles and modern UI components found across various websites. The goal was to explore visual modularity and experiment with animated entrances using real-world design references.
 
 ## Technologies
 
