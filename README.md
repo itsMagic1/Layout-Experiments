@@ -1,6 +1,6 @@
 # Practice Project
 
-![Preview](images/Preview.png)
+![Preview](Artemis/images/Preview.png)
 
 This page is a personal design practice. It includes four main sections focused on layout, animations, and visual atmosphere.
 
