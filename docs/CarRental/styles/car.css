@@ -1,0 +1,128 @@
+:root {
+  font-size: 16px;
+}
+.carInfo {
+  max-width: 100rem;
+  width: 90%;
+  margin: 9rem auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.carInfo .content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  width: 80%;
+  color: #fff;
+}
+.carInfo .content a {
+  color: #979797;
+}
+.carInfo .content h2 {
+  font-size: 3rem;
+  font-weight: 500;
+  color: #fff;
+}
+.carInfo .content .btn {
+  margin-top: 1rem;
+}
+.imgList {
+  width: 100%;
+  height: 100%;
+  background-color: steelblue;
+  position: relative;
+  border-radius: 2rem;
+  overflow: hidden;
+}
+.carousel {
+  position: relative;
+}
+.features {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  z-index: 30;
+  display: flex;
+  gap: .5rem;
+}
+.imgList .img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.imgList .img img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.imgList {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 2rem;
+}
+.imgList .img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: 
+    opacity 0.5s ease,
+    transform 0.5s ease;
+  z-index: 1;
+}
+.imgList .img.prev {
+  opacity: 1;
+  transform: translateX(-100%);
+  z-index: 2;
+}
+.imgList .img.first {
+  opacity: 1;
+  transform: translateX(0);
+  z-index: 3;
+}
+.imgList .img.next {
+  opacity: 1;
+  transform: translateX(100%);
+  z-index: 2;
+}
+.carousel button#prev,
+.carousel button#next {
+  position: absolute;
+  top: 50%;
+  width: 2rem;
+  height: 2rem;
+  z-index: 20;
+  border: none;
+  background: transparent;
+  box-shadow: 0 0 13px rgb(255, 255, 255);
+  color: #fff;
+  font-size: 1.5rem;
+}
+.carousel button#next {
+  right: 2rem;
+}
+.carousel button#prev {
+  left: 2rem;
+}
+@media screen and (max-width: 1200px) {
+  .carInfo {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-top: 5rem;
+  }  
+  .imgList {
+    min-height: 35rem;
+  }
+}
