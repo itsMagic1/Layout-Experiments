@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Animación en Secuencia</title>
+</head>
+<body>
+  <h1 class="titulo1">Hola Mundo</h1>
+  <h2 class="titulo2">Esto es GSAP</h2>
+  <h3 class="titulo3">SplitText en acción</h3>
+
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/SplitText.min.js"></script>
+  <script>
+    gsap.registerPlugin(SplitText);
+
+    const t1 = new SplitText(".titulo1", { type: "chars" });
+    const t2 = new SplitText(".titulo2", { type: "words" });
+    const t3 = new SplitText(".titulo3", { type: "lines" });
+
+    const tl = gsap.timeline();
+
+    // h1: letras que escalan
+    tl.from(t1.chars, {
+      scale: 2,
+      opacity: 0,
+      duration: 0.3,
+      stagger: 0.05,
+      ease: "back.out(1.7)"
+    })
+
+    // h2: palabras que entran desde la izquierda
+    .from(t2.words, {
+      x: -100,
+      opacity: 0,
+      duration: 0.4,
+      stagger: 0.1,
+      ease: "power2.out"
+    }, "+=0.2") // espera 0.2s después del h1
+
+    // h3: líneas que caen desde arriba
+    .from(t3.lines, {
+      y: -100,
+      opacity: 0,
+      duration: 0.5,
+      stagger: 0.2,
+      ease: "power2.out"
+    }, "+=0.2");
+  </script>
+</body>
+</html>
